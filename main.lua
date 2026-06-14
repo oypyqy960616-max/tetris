@@ -77,3 +77,20 @@ local function canMove(shape, posX, posY)--建立canMove功能用於確認方塊
 
     return true
 end
+function spawnPiece()--建立新的隨機方塊
+
+    local types = {--可生成的方塊種類
+        shapes.L,
+        shapes.T,
+        shapes.J,
+        shapes.I,
+        shapes.O
+    }
+
+    currentShape = types[math.random(#types)]-- 隨機取得一個方塊形狀#types/ = types內元素數量/math.random() = 隨機產生編號/types[編號] = 取出對應方塊
+
+
+    pieceX = 5--新方塊生成的X位置
+    pieceY = 1--新方塊生成的Y位置
+
+end
