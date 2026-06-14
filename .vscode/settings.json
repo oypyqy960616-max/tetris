@@ -1,0 +1,10 @@
+{
+    "pixelbyte.love2d.path": "C:\\Users\\User\\Desktop\\程式\\LOVE\\love.exe",
+    "pixelbyte.love2d.revealStatus": true,
+    "Lua.diagnostics.globals": [
+        "love",
+        "boardWidth",
+        "boardHeight",
+        "board"
+    ]
+}
