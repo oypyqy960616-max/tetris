@@ -4,6 +4,9 @@ boardWidth = 10 --地圖寬
 boardHeight = 9 --地圖高
 dropTimer = 0   --目前累積掉落時間
 dropDelay = 1   ----每1秒掉一格
+sidePanelWidth = 200
+windowWidth = boardWidth * tileSize + sidePanelWidth
+windowHeight = boardHeight * tileSize
 
 --方塊座標
 shapes = {
@@ -108,17 +111,6 @@ function spawnPiece() --建立新的隨機方塊
     pieceY = 1 --新方塊生成的Y位置
 end
 
-sidePanelWidth = 200
-windowWidth = boardWidth * tileSize + sidePanelWidth
-windowHeight = boardHeight * tileSize
-
-function love.load()
-    love.window.setMode(windowWidth, windowHeight)
-
-    blockImage = love.graphics.newImage("1x1.png")
-    spawnPiece()
-end
-
 --畫出指定方格
 function drawPiece(shape, posX, posY)                 --畫圖(指定圖案)
     for _, block in ipairs(shape) do                  --依序取出形狀中的每個小方塊
@@ -131,6 +123,7 @@ function drawPiece(shape, posX, posY)                 --畫圖(指定圖案)
 end
 
 function love.load()                               --初始化(圖 分數-0 音樂 第一個方塊都屬於)
+ love.window.setMode(windowWidth, windowHeight)
     blockImage = love.graphics.newImage("1x1.png") --載入方塊圖片
     spawnPiece()                                   --生成第一個方塊
 end
